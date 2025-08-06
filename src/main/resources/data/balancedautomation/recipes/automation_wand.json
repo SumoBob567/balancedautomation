@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "tool",
+  "key": {
+    "#": {
+      "item": "balancedautomation:automation_crystal"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " ##",
+    " S#",
+    "S  "
+  ],
+  "result": {
+    "item": "balancedautomation:automation_wand"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "balancedautomation:block/automation_deepslate_ore"
+    }
+  }
+}

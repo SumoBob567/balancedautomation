@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "balancedautomation:automation_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "balancedautomation:automation_crystal"
+  }
+}
