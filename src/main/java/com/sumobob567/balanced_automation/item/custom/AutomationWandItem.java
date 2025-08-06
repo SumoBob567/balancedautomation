@@ -42,7 +42,7 @@ public class AutomationWandItem extends Item {
             if (!level.isClientSide()) {
                 level.setBlockAndUpdate(clickPosition, WAND_MAP.get(currentBlock).defaultBlockState());
 
-                //pContext.getItemInHand().hurtAndBreak(1, (ServerLevel) level, (ServerPlayer) player, item -> player.onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
+                pContext.getItemInHand().hurtAndBreak(1, player, p -> p.broadcastBreakEvent(player.getUsedItemHand()));
 
                 level.playSound(null, clickPosition, SoundEvents.GRINDSTONE_USE, SoundSource.BLOCKS);
             }
