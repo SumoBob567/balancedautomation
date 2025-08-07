@@ -6,12 +6,13 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
-public class AutomationBlock extends Block {
-    public AutomationBlock() {
-        super(Properties.of()
+public class AutomationCoreBlock extends Block{
+    public AutomationCoreBlock() {
+        super(BlockBehaviour.Properties.of()
 
                 .strength(4F)
                 .requiresCorrectToolForDrops()
@@ -20,4 +21,9 @@ public class AutomationBlock extends Block {
         );
     }
 
+    @Override
+    public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @Nullable LivingEntity pPlacer, ItemStack pStack) {
+        super.setPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
+
+    }
 }

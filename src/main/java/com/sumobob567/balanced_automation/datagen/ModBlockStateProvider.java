@@ -17,6 +17,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.AUTOMATION_BLOCK);
         blockWithItem(ModBlocks.AUTOMATION_ORE);
         blockWithItem(ModBlocks.AUTOMATION_DEEPSLATE_ORE);
+        blockWithItem(ModBlocks.AUTOMATION_CORE);
     }
 
     private void blockWithItem(RegistryObject<Block> block) {
