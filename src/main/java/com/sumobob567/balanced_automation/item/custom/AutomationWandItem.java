@@ -3,6 +3,8 @@ package com.sumobob567.balanced_automation.item.custom;
 
 import com.sumobob567.balanced_automation.block.AutomatonCoreBlock;
 import com.sumobob567.balanced_automation.block.ModBlocks;
+import com.sumobob567.balanced_automation.entity.ModEntities;
+import com.sumobob567.balanced_automation.entity.SlayerAutomatonEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -84,6 +86,11 @@ public class AutomationWandItem extends Item {
                             level.setBlock(west, Blocks.AIR.defaultBlockState(), 3);
                         }
                         if (currentMode == 1) {
+                            SlayerAutomatonEntity slayer = ModEntities.SLAYER.get().create(level);
+                            if (slayer != null) {
+                                slayer.moveTo(clickPosition.getX() + 0.5, clickPosition.getY(), clickPosition.getZ() + 0.5, 0, 0);
+                                level.addFreshEntity(slayer);
+                            }
                             player.sendSystemMessage(Component.literal("Summoning Slayer"));
                         } else if (currentMode == 2) {
                             player.sendSystemMessage(Component.literal("Summoning Farmer"));

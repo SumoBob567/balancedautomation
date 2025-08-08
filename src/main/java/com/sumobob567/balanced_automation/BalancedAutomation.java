@@ -2,9 +2,12 @@ package com.sumobob567.balanced_automation;
 
 import com.mojang.logging.LogUtils;
 import com.sumobob567.balanced_automation.block.ModBlocks;
+import com.sumobob567.balanced_automation.entity.ModEntities;
+import com.sumobob567.balanced_automation.entity.client.SlayerRenderer;
 import com.sumobob567.balanced_automation.item.ModItems;
 import com.sumobob567.balanced_automation.tab.ModCreativeModeTabs;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
@@ -48,6 +51,9 @@ public class BalancedAutomation {
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
 
+
+        ModEntities.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -89,7 +95,7 @@ public class BalancedAutomation {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            EntityRenderers.register(ModEntities.SLAYER.get(), SlayerRenderer::new);
         }
     }
 }
