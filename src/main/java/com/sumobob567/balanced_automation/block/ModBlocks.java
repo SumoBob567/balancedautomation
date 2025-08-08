@@ -30,7 +30,7 @@ public class ModBlocks {
     }
 
     public static final RegistryObject<Block> AUTOMATION_BLOCK = registerBlock("automation_block", AutomationBlock::new);
-    public static final RegistryObject<Block> AUTOMATION_CORE = registerBlock("automation_core", AutomationCoreBlock::new);
+    public static final RegistryObject<Block> AUTOMATON_CORE = registerBlock("automaton_core", AutomatonCoreBlock::new);
     public static final RegistryObject<Block> AUTOMATION_ORE = registerBlock("automation_ore", AutomationOreBlock::new);
     public static final RegistryObject<Block> AUTOMATION_DEEPSLATE_ORE = registerBlock("automation_deepslate_ore", AutomationDeepslateOreBlock::new);
 

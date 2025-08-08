@@ -1,12 +1,15 @@
 {
   "item.balancedautomation.automation_crystal": "Automation Crystal",
+  "item.balancedautomation.automation_wand": "Automation Wand",
+
   "item.balancedautomation.automation_block": "Automation Block",
+  "item.balancedautomation.automaton_core": "Automaton Core",
   "item.balancedautomation.automation_ore": "Automation Ore",
   "item.balancedautomation.automation_deepslate_ore": "Automation Deepslate Ore",
-  "item.balancedautomation.automation_wand": "Automation Wand",
 
 
   "block.balancedautomation.automation_block": "Automation Block",
+  "block.balancedautomation.automaton_core": "Automaton Core",
   "block.balancedautomation.automation_ore": "Automation Ore",
   "block.balancedautomation.automation_deepslate_ore": "Automation Deepslate Ore",
 

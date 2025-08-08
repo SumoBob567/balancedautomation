@@ -24,6 +24,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.AUTOMATION_CRYSTAL.get());
                         output.accept(ModItems.AUTOMATION_WAND.get());
                         output.accept(ModBlocks.AUTOMATION_BLOCK.get());
+                        output.accept(ModBlocks.AUTOMATON_CORE.get());
                         output.accept(ModBlocks.AUTOMATION_ORE.get());
                         output.accept(ModBlocks.AUTOMATION_DEEPSLATE_ORE.get());
                     })

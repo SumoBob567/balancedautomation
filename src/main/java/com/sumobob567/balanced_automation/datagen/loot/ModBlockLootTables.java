@@ -36,7 +36,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     @Override
     protected void generate() {
         this.dropSelf(ModBlocks.AUTOMATION_BLOCK.get());
-        this.dropSelf(ModBlocks.AUTOMATION_CORE.get());
+        this.dropSelf(ModBlocks.AUTOMATON_CORE.get());
 
         this.add(ModBlocks.AUTOMATION_DEEPSLATE_ORE.get(),
                 block -> createDeepslateOreDrops(ModBlocks.AUTOMATION_DEEPSLATE_ORE.get(), ModItems.AUTOMATION_CRYSTAL.get()));

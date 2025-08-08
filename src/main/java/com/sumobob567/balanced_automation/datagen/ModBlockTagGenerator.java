@@ -23,12 +23,12 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.AUTOMATION_BLOCK.get());
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.AUTOMATION_BLOCK.get())
-                .add(ModBlocks.AUTOMATION_CORE.get())
+                .add(ModBlocks.AUTOMATON_CORE.get())
                 .add(ModBlocks.AUTOMATION_ORE.get())
                 .add(ModBlocks.AUTOMATION_DEEPSLATE_ORE.get());
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.AUTOMATION_BLOCK.get())
-                .add(ModBlocks.AUTOMATION_CORE.get())
+                .add(ModBlocks.AUTOMATON_CORE.get())
                 .add(ModBlocks.AUTOMATION_ORE.get())
                 .add(ModBlocks.AUTOMATION_DEEPSLATE_ORE.get());
         this.tag(ModTags.Blocks.FORGE_ORES)
