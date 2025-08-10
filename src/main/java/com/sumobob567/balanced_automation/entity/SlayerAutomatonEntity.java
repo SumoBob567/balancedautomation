@@ -53,7 +53,7 @@ public class SlayerAutomatonEntity extends Animal {
         return Animal.createLivingAttributes()
                 .add(Attributes.FOLLOW_RANGE, 16.0D)
                 .add(Attributes.ATTACK_DAMAGE, 6)
-                .add(Attributes.ATTACK_KNOCKBACK, 1)
+                .add(Attributes.ATTACK_KNOCKBACK, 0)
                 .add(Attributes.MOVEMENT_SPEED, 0)
                 .add(Attributes.MAX_HEALTH, 100)
                 .add(Attributes.ATTACK_SPEED, 1)
@@ -61,6 +61,23 @@ public class SlayerAutomatonEntity extends Animal {
                 .add(Attributes.ARMOR_TOUGHNESS, 0.5)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 20);
     }
+
+    @Override
+    public boolean isPushable() {
+        return false;
+    }
+
+    @Override
+    public boolean isAttackable() {
+        return false;
+    }
+
+    @Override
+    public boolean isDeadOrDying() {
+        return false;
+    }
+
+
 
     @Override
     public @Nullable AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {

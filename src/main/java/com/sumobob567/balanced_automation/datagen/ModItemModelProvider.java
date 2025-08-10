@@ -19,6 +19,8 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         simpleItem(ModItems.AUTOMATION_CRYSTAL);
         simpleItem(ModItems.AUTOMATION_WAND);
+
+        withExistingParent(ModItems.SLAYER_SPAWN_EGG.getId().getPath(), ResourceLocation.parse("item/template_spawn_egg"));
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
