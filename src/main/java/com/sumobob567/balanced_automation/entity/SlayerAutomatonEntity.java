@@ -1,6 +1,9 @@
 package com.sumobob567.balanced_automation.entity;
 
 import com.sumobob567.balanced_automation.entity.goals.StationaryAttackGoal;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -26,8 +29,17 @@ import org.w3c.dom.Attr;
 
 public class SlayerAutomatonEntity extends Animal {
 
+    private static final EntityDataAccessor<Integer> ATTACK_ANIMATION_TICK =
+            SynchedEntityData.defineId(SlayerAutomatonEntity.class, EntityDataSerializers.INT);
+
     protected SlayerAutomatonEntity(EntityType<? extends Animal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
+    }
+
+    @Override
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        this.entityData.define(ATTACK_ANIMATION_TICK, 0);
     }
 
     @Override
@@ -73,6 +85,18 @@ public class SlayerAutomatonEntity extends Animal {
             }
         }
 
+        if (this.getAttackAnimationTick() > 0) {
+            this.setAttackAnimationTick(this.getAttackAnimationTick() - 1);
+        }
+
+    }
+
+    public int getAttackAnimationTick() {
+        return this.entityData.get(ATTACK_ANIMATION_TICK);
+    }
+
+    public void setAttackAnimationTick(int tick) {
+        this.entityData.set(ATTACK_ANIMATION_TICK, tick);
     }
 
 

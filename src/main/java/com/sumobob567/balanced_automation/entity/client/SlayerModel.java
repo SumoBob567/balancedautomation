@@ -13,7 +13,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 
-public class SlayerModel<T extends Entity> extends HierarchicalModel<T> {
+public class SlayerModel<T extends SlayerAutomatonEntity> extends HierarchicalModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath("modid", "slayermodel"), "main");
     private final ModelPart root;
@@ -85,7 +85,14 @@ public class SlayerModel<T extends Entity> extends HierarchicalModel<T> {
         this.right_leg.xRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
         this.left_leg.xRot = Mth.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount;
 
+        int attackTick = entity.getAttackAnimationTick();
 
+        if (attackTick > 0) {
+            float progress = attackTick - ageInTicks % 1.0F;
+            this.right_arm.xRot = -2.0F + 1.0F * Mth.triangleWave(progress, 10.0F);
+            this.left_arm.xRot = -2.0F + 1.0F * Mth.triangleWave(progress, 10.0F);
+
+        }
 
     }
 
